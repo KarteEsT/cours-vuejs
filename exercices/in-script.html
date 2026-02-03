@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>In script example</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <style>
+        .red { color: red; }
+    </style>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <h1 :id="fullname">Hi {{ fullname }}!</h1>
+        <p v-show="fullname.length > 15">Such a long name</p>
+        <input v-model="firstname" name="firstname" placeholder="Firstname" />
+        <input v-model="lastname" name="lastname" placeholder="Lastname" />
+
+        <h2>Names</h2>
+        <form @submit.prevent="addName">
+            <input type="text" name="new-name" v-model="newName"/>
+        </form>
+        <ul>
+            <li
+                v-for="(name, index) in names"
+                :key="`names-${name}`"
+                @click="removeName(name)"
+                :class="{ red: names.filter(element => element === name).length > 1 }"
+            >
+                {{ `${name}` }}
+            </li>
+        </ul>
+        <form @submit.prevent="clearNames">
+            <button :disabled="!names.length">Clear</button>
+        </form>
+    </div>
+
+    <script type="module">
+        const { computed, createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const newName = ref('');
+                const names = ref([]);
+                const firstname = ref('John');
+                const lastname = ref('Doe');
+                const fullname = computed(() => `${firstname.value} ${lastname.value}`)
+                const addName = (_event) => { 
+                    if (newName.value.length > 0) {
+                        names.value.push(newName.value)
+                        newName.value = ''
+                    } 
+                }
+                const removeName = (name) => {
+                    names.value.splice(names.value.findIndex(element => element === name), 1)
+                }
+                const clearNames = () => names.value.splice(0, names.value.length)
+                return { 
+                    addName,
+                    removeName,
+                    clearNames,
+                    newName,
+                    names,
+                    firstname,
+                    fullname,
+                    lastname,
+                };
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
