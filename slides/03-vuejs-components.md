@@ -37,6 +37,42 @@ A quoi ça sert ?
 
 ---
 
+## Déclarer un composant - Options API
+
+```javascript
+export default {
+  components: {}, // Composants utilisés par le composant courant
+  props: [], // Propriétés reçues
+  emits: [], // Evenements levés
+  data() {
+    return {};
+  }, // Données internes
+  computed: {}, // Données calculées
+  methods: {}, // Méthodes internes
+  template: ``, // Template à rendre
+};
+```
+
+---
+
+## Déclarer un composant - Options API
+
+```javascript
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  template: `<div>
+    <span>{{ count }}</span>
+    <button @click="count++">Increment</button>
+  </div>`,
+};
+```
+
+---
+
 ## Déclarer un composant - SFC
 
 Single File Component.  
@@ -62,16 +98,16 @@ const count = ref(0)
 Obligatoire sans outil de build.
 
 ```javascript
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export default {
   setup() {
-    const count = ref(0)
-    return { count }
+    const count = ref(0);
+    return { count };
   },
   template: `
     <p>{{ count }}</p>
     <button @click="count++">Increment</button>
-  `
-}
+  `,
+};
 ```
