@@ -8,7 +8,7 @@ By default, the image builds the project. It runs `npm run build`
 
 1. Build the docker image locally in the Dockerfile folder  
    `docker build -t node-runner .`
-2. Run the image with the wanted NPM command  
+2. Run the image with the wanted NPM command
    - Under Linux: `docker run --rm -it -v "$PWD:/app" -w /app --entrypoint npm node-runner run dev`
    - Under PowerShell: `docker run --rm -it -v "${PWD}:/app" -w /app --entrypoint npm node-runner run dev`
 
@@ -16,5 +16,5 @@ By default, the image builds the project. It runs `npm run build`
 
 - `npm install` - Install dependencies defined in package.json or a new one if specified
 - `npm run <script>` - Run a script defined in package.json. Common scripts are:
-  - `dev`
-  - `build`
+  - `dev` Launch the project for developments
+  - `build` Build a static website with a JS script
