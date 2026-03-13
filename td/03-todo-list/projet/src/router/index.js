@@ -8,12 +8,7 @@ const router = createRouter({
       path: '/',
       name: 'list',
       component: ListView,
-    },
-    {
-      path: '/new',
-      name: 'create',
-      component: () => import('@/views/CreateView.vue'),
-    },
+    }
   ],
 })
 

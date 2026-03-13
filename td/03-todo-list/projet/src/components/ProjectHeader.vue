@@ -7,7 +7,6 @@ import { RouterLink } from 'vue-router'
     <h1>Projects</h1>
     <nav>
       <RouterLink to="/">List</RouterLink>
-      <RouterLink to="/new">Create</RouterLink>
     </nav>
   </header>
 </template>
@@ -15,11 +14,11 @@ import { RouterLink } from 'vue-router'
 <style lang="css" scoped>
 header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   border-bottom: 2px solid #aaa;
-  padding-bottom: 20px;
-  margin-bottom: 50px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -29,6 +28,7 @@ h1 {
 nav {
   display: flex;
   gap: 1rem;
+  font-size: 1.2em;
 }
 
 nav a {
@@ -37,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #42b983;
+  color: royalblue;
   text-decoration: none;
 }
 </style>
