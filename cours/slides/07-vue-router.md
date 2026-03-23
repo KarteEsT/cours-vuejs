@@ -10,6 +10,8 @@ footer: Adrien Bouyssou (macdrien.github.io)
 
 ## Utilité
 
+Un projet VueJS est une Single Page Application.  
+Dans les SPA, il n'y a pas de changement de page.  
 Permet de naviguer au sein de l'application VueJS et de gérer l'historique.
 
 ### Paquet NPM
@@ -23,8 +25,8 @@ Permet de naviguer au sein de l'application VueJS et de gérer l'historique.
 ```javascript
 import { createMemoryHistory, createRouter } from "vue-router";
 
-import HomeView from "./HomeView.vue";
-import AboutView from "./AboutView.vue";
+import HomeView from "@/views/HomeView.vue";
+import AboutView from "@/views/AboutView.vue";
 
 const routes = [
   { path: "/", component: HomeView },

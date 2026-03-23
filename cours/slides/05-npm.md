@@ -61,6 +61,16 @@ NPM est un gestionnaire de paquets pour les environnements NodeJS. Il permets do
 
 ---
 
+## Petit point sur les versions
+
+En trois parties : `5.8.0 = [majeure].[mineure].[micro]`
+
+- Majeure : Ajoute du fonctionnel et casse la rétrocompatibilité.
+- Mineure : Ajoute du fonctionnel et est rétrocompatible.
+- Micro : Corrige un bug. N'ajoute pas de fonctionnel.
+
+---
+
 ## Version des dépendances
 
 ```json

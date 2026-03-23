@@ -1,5 +1,5 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
 import ProjectHeader from './components/ProjectHeader.vue'
 </script>
 
@@ -12,7 +12,7 @@ import ProjectHeader from './components/ProjectHeader.vue'
 
 <style lang="css">
 .app {
-  padding: 5px 30px;
+  padding: 10px 30px;
 
   font-size: 18px;
 }

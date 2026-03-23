@@ -13,7 +13,5 @@ defineProps(['todos'])
 <style lang="css" scoped>
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0 20px;
 }
 </style>
